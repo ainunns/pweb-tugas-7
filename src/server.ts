@@ -1,7 +1,9 @@
 import express from 'express'
 import payload from 'payload'
 
-require('dotenv').config()
+import dotenv from 'dotenv'
+
+dotenv.config()
 const app = express()
 
 // Redirect root to Admin panel
@@ -16,7 +18,7 @@ const start = async () => {
     express: app,
     onInit: async () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)
-    },
+    }
   })
 
   // Add your own express routes here

@@ -5,22 +5,26 @@ const Links: CollectionConfig = {
   auth: false,
   admin: {
     useAsTitle: 'Link Shortener',
-    defaultColumns: ['originalUrl', 'shortUrl'],
+    defaultColumns: ['originalUrl', 'shortUrl']
+  },
+  access: {
+    read: () => true,
+    create: () => true
   },
   fields: [
     {
-      'name': 'originalUrl',
-      'label': 'Original URL',
-      'type': 'text',
-      'required': true,
+      name: 'originalUrl',
+      label: 'Original URL',
+      type: 'text',
+      required: true
     },
     {
-      'name': 'shortUrl',
-      'label': 'Short URL',
-      'type': 'text',
-      'required': true,
-      'unique': true
-    },
+      name: 'shortUrl',
+      label: 'Short URL',
+      type: 'text',
+      required: true,
+      unique: true
+    }
   ]
 }
 
